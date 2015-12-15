@@ -1,0 +1,44 @@
+﻿@model Cash_Inspection.Data.Model.Entities.Category
+
+@{
+    ViewBag.Title = "Details";
+    string name = Model.Title;
+}
+
+<h2>Подробности</h2>
+
+<div>
+    <h4>Название категории: @name</h4>
+    Выделено средств:@Model.NumberofMoney
+    <hr />
+    <div >
+        @Html.ActionLink("Создать подкат", "Create", "Subcategories", new { Id = ViewBag.IdCategory }, htmlAttributes: new { @class = "waves-effect waves-light btn" })
+        @Html.ActionLink("Back to List", "Index", "Categories", htmlAttributes: new { @class = "waves-effect waves-light btn"})
+        
+        <table>
+            <thead>
+                <tr>
+                    <th data-field="id">@Html.Label("Название")</th>
+                    <th data-field="price">@Html.Label("Сумма")</th>
+                    <th data-field="date">@Html.Label("Дата")</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model.Subcategories)
+            {
+                <tbody>
+                    <tr>
+                        <td>@Html.DisplayFor(modelt => item.Title)</td>
+                        <td>@Html.DisplayFor(modelt => item.Value)</td>
+                        <td>@Html.DisplayFor(modelt => item.Date)</td>
+                    </tr>
+                </tbody>
+            }
+            
+            </table>
+        
+    </div>
+</div>
+
+
+
+        
