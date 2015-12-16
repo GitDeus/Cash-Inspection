@@ -284,7 +284,7 @@ namespace Cash_Inspection.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("HomePage", "Home");
         }
 
         //
@@ -365,7 +365,7 @@ namespace Cash_Inspection.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Categories");
             }
         }
 

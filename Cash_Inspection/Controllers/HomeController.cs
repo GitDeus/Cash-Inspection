@@ -8,7 +8,7 @@ namespace Cash_Inspection.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult HomePage()
         {
             return View();
         }
